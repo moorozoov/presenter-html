@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="mainst.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        window.onload = () => {
+            const socket = io();
+            $('#btn').click(() => {
+                e.preventDefault(); // prevents page reloading
+                socket.emit('click', 'hello server!'));
+                return false;
+            });
+    });
+    </script>
 </head>
 <body>
 <div>
@@ -20,8 +31,9 @@
             <input type="text" size="40">
         </p>
 
-        <p><input type="submit" value="Отправить">
+        <p><input type="submit" value="Отправить" >
     </form>
+    <button onclick="eventName">Кнопка</button>
 </div>
 </body>
 </html>
